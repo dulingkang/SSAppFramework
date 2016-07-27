@@ -13,6 +13,8 @@
 		2A10B54A1D488263004C66C0 /* SSNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B5491D488263004C66C0 /* SSNavigator.swift */; };
 		2A10B54C1D48847A004C66C0 /* SSPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B54B1D48847A004C66C0 /* SSPage.swift */; };
 		2A10B54F1D488C37004C66C0 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B54E1D488C37004C66C0 /* NSObjectExtension.swift */; };
+		2A4ABECC1D48A9FF003FBB63 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4ABECB1D48A9FF003FBB63 /* StringExtension.swift */; };
+		2A4ABED31D48B655003FBB63 /* SSUrlCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4ABED21D48B655003FBB63 /* SSUrlCoding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		2A10B5491D488263004C66C0 /* SSNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSNavigator.swift; sourceTree = "<group>"; };
 		2A10B54B1D48847A004C66C0 /* SSPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPage.swift; sourceTree = "<group>"; };
 		2A10B54E1D488C37004C66C0 /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		2A4ABECB1D48A9FF003FBB63 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2A4ABED21D48B655003FBB63 /* SSUrlCoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUrlCoding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		2A10B52E1D48706F004C66C0 /* SSAppFramework */ = {
 			isa = PBXGroup;
 			children = (
+				2A4ABED11D48B62B003FBB63 /* Util */,
 				2A10B54D1D488C14004C66C0 /* Extention */,
 				2A10B5481D488247004C66C0 /* Navigator */,
 				2A10B52F1D48706F004C66C0 /* SSAppFramework.h */,
@@ -107,8 +112,17 @@
 			isa = PBXGroup;
 			children = (
 				2A10B54E1D488C37004C66C0 /* NSObjectExtension.swift */,
+				2A4ABECB1D48A9FF003FBB63 /* StringExtension.swift */,
 			);
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		2A4ABED11D48B62B003FBB63 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2A4ABED21D48B655003FBB63 /* SSUrlCoding.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4ABECC1D48A9FF003FBB63 /* StringExtension.swift in Sources */,
+				2A4ABED31D48B655003FBB63 /* SSUrlCoding.swift in Sources */,
 				2A10B54C1D48847A004C66C0 /* SSPage.swift in Sources */,
 				2A10B54F1D488C37004C66C0 /* NSObjectExtension.swift in Sources */,
 				2A10B54A1D488263004C66C0 /* SSNavigator.swift in Sources */,
@@ -411,6 +427,7 @@
 				2A10B5421D48706F004C66C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A10B5431D48706F004C66C0 /* Build configuration list for PBXNativeTarget "SSAppFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +436,7 @@
 				2A10B5451D48706F004C66C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

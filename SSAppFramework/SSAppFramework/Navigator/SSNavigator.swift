@@ -13,7 +13,7 @@ protocol SSNavigatorDelegate {
     func didChangePageTo(url: String)
 }
 
-class SSNavigator: UIViewController {
+public class SSNavigator: UIViewController {
     static let sharedInstance = SSNavigator()
     var topPage: SSPage!
     

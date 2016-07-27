@@ -25,17 +25,17 @@ protocol SSPageLifeCircle {
     func canNotForwardUrl(urlStr: String)
 }
 
-typealias forwardCallBack = (dict: NSDictionary?)->Void
+public typealias forwardCallBack = (dict: NSDictionary?)->Void
 
-class SSPage: UIViewController, SSPageLifeCircle {
+public class SSPage: UIViewController, SSPageLifeCircle {
     
-    var navigator: SSNavigator! {
+    public var navigator: SSNavigator! {
         get {
             return SSNavigator.sharedInstance
         }
     }
     
-    func forward(url: String) {
+    public func forward(url: String) {
         print(#function, self.className)
         if self != navigator.topPage {
             return
@@ -43,7 +43,7 @@ class SSPage: UIViewController, SSPageLifeCircle {
         navigator.forward(url)
     }
     
-    func forward(url: String, callback: forwardCallBack?) {
+    public func forward(url: String, callback: forwardCallBack?) {
         if self != navigator.topPage {
             return
         }
