@@ -22,8 +22,6 @@ class SSAppFrameworkTests: XCTestCase {
     }
     
     func testExample() {
-        let page = SSPage()
-        page.forward("jingji")
     }
     
 }

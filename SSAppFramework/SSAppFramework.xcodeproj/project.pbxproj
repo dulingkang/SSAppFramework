@@ -15,6 +15,8 @@
 		2A10B54F1D488C37004C66C0 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A10B54E1D488C37004C66C0 /* NSObjectExtension.swift */; };
 		2A4ABECC1D48A9FF003FBB63 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4ABECB1D48A9FF003FBB63 /* StringExtension.swift */; };
 		2A4ABED31D48B655003FBB63 /* SSUrlCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4ABED21D48B655003FBB63 /* SSUrlCoding.swift */; };
+		2A4ABF061D4A093C003FBB63 /* SSPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4ABF051D4A093C003FBB63 /* SSPageTests.swift */; };
+		2A4ABF081D4A0959003FBB63 /* SSUrlCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4ABF071D4A0959003FBB63 /* SSUrlCodingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		2A10B54E1D488C37004C66C0 /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		2A4ABECB1D48A9FF003FBB63 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		2A4ABED21D48B655003FBB63 /* SSUrlCoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUrlCoding.swift; sourceTree = "<group>"; };
+		2A4ABF051D4A093C003FBB63 /* SSPageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSPageTests.swift; sourceTree = "<group>"; };
+		2A4ABF071D4A0959003FBB63 /* SSUrlCodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSUrlCodingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			children = (
 				2A10B53B1D48706F004C66C0 /* SSAppFrameworkTests.swift */,
 				2A10B53D1D48706F004C66C0 /* Info.plist */,
+				2A4ABF051D4A093C003FBB63 /* SSPageTests.swift */,
+				2A4ABF071D4A0959003FBB63 /* SSUrlCodingTests.swift */,
 			);
 			path = SSAppFrameworkTests;
 			sourceTree = "<group>";
@@ -245,6 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A4ABF081D4A0959003FBB63 /* SSUrlCodingTests.swift in Sources */,
+				2A4ABF061D4A093C003FBB63 /* SSPageTests.swift in Sources */,
 				2A10B53C1D48706F004C66C0 /* SSAppFrameworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
