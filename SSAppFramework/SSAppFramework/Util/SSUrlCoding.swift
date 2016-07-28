@@ -21,19 +21,55 @@ public struct SSUrlInfo {
 
 public struct SSUrlCoding {
     static func decodeUrlToModel(url: String) -> SSUrlInfo? {
-        let urlInfo = SSUrlInfo()
-        if url.isEmpty {
-            return urlInfo
-        }
+        var info = SSUrlInfo()
         let urlTrim = url.stringByTrimmingCharactersInSet(.whitespaceCharacterSet())
+        if urlTrim.isEmpty {
+            return info
+        }
         let questionMark = urlTrim.rangeOfString("?")
         if urlTrim.endIndex > questionMark?.endIndex {
             let paramUrl = urlTrim.substringFromIndex((questionMark?.endIndex)!)
+            info = decodeParams(paramUrl)
+            info.urlPath = urlTrim.substringToIndex((questionMark?.startIndex)!)
+        } else {
+            info.urlPath = urlTrim
+        }
+        info.urlOrigin = urlTrim
+        
+        let protocolMark = urlTrim.rangeOfString("://")
+        if let startIndex = protocolMark?.startIndex {
+            info.urlProtocol = urlTrim.substringToIndex(startIndex)
+            let behindProtocolMark = urlTrim.substringFromIndex((protocolMark?.endIndex)!)
+            let pathComponents = behindProtocolMark.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: "?"))
+            info.appPageName = pathComponents[0]
         }
         
-        
-        
-        return urlInfo
+        let bufferString = NSMutableString()
+        bufferString.appendString(info.urlPath!)
+        if info.params.count > 0 {
+            bufferString.appendString("?")
+            var first = true
+            for dict in info.params {
+                if let dict = dict as? NSDictionary {
+                    for (key, value) in dict {
+                        if first {
+                            first = false
+                        } else {
+                            bufferString.appendString("&")
+                        }
+                        if let value = value as? String  {
+                            if value.isEmpty {
+                                bufferString.appendString(codeUrl(String(key))!)
+                            } else {
+                                bufferString.appendFormat("%@=%@", codeUrl(String(key))!, codeUrl(value)!)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        info.url = bufferString as String
+        return info
     }
     
     static func decodeParams(paramUrl: String) -> SSUrlInfo {
@@ -78,6 +114,11 @@ public struct SSUrlCoding {
         let outputStr = NSMutableString(string: urlStr)
         outputStr.replaceOccurrencesOfString("+", withString: "", options: .LiteralSearch, range: NSMakeRange(0, outputStr.length))
         return outputStr.stringByRemovingPercentEncoding
+    }
+    
+    static func codeUrl(urlStr: String) -> String?{
+        let customAllowedSet =  NSCharacterSet(charactersInString:"!*'();:@&=+$,/?%#[]")
+        return urlStr.stringByAddingPercentEncodingWithAllowedCharacters(customAllowedSet)
     }
 }
 
