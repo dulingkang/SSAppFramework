@@ -25,7 +25,7 @@ protocol SSPageLifeCircle {
     func canNotForwardUrl(urlStr: String)
 }
 
-public typealias forwardCallBack = (dict: NSDictionary?)->Void
+public typealias forwardCallBack = ()->Void
 
 public class SSPage: UIViewController, SSPageLifeCircle {
     
